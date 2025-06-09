@@ -1,4 +1,4 @@
-# SynergyX Optimization: Applying Feature Fusion and Reprocess the gene data
+# SynergyX Optimization: Applying Feature Fusion and reconstructing the cell line data
 
 ## Introduction
 This project is an optimized version of the original SynergyX model, focusing on two major improvements:

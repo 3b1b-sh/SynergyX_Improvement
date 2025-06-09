@@ -69,10 +69,25 @@ pip install biopython  # Required for gene data processing
    - Navigate to `data/raw_data/process_gene_data.ipynb`
    - Update the file paths in the notebook according to your local setup
    - Run the notebook to process gene data
-4. Cell line multi-omics data is stored in `data/0_cell_data/`
-5. Drug-related data is stored in `data/1_drug_data/`
-6. Dataset splits are stored in `data/split/`
-7. Processed drug data (.pt files) will be automatically generated in `data/processed/` during training
+4. Generate drug feature data:
+   - Generate molecular fingerprints:
+     ```bash
+     python generate_drug_fingerprint.py \
+         --split_dir data/split \
+         --n_bits 1024 \
+         --radius 2 \
+         --output_path data/1_drug_data/drug_fp_dict_1024bits.npy
+     ```
+   - Generate molecular graphs:
+     ```bash
+     python generate_drug_graph.py \
+         --split_dir data/split \
+         --output_path data/1_drug_data/drug_graph_dict.npy
+     ```
+5. Cell line multi-omics data is stored in `data/0_cell_data/`
+6. Drug-related data is stored in `data/1_drug_data/`
+7. Dataset splits are stored in `data/split/`
+8. Processed drug data (.pt files) will be automatically generated in `data/processed/` during training
 
 ## Model Training
 ### Basic Training Command
